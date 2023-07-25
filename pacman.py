@@ -51,7 +51,6 @@ import sys, types, time, random, os
 ###################################################
 # YOUR INTERFACE TO THE PACMAN WORLD: A GameState #
 ###################################################
-
 class GameState:
     """
     A GameState specifies the full game state, including the food, capsules,
