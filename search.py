@@ -82,28 +82,27 @@ def depthFirstSearch(problem: SearchProblem):
     To get started, you might want to try some of these simple commands to
     understand the search problem that is being passed in:
     """
-    print("Start:", problem.getStartState())
-    print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
-    print("Start's successors:", problem.getSuccessors(problem.getStartState()))
+    #print("Start:", problem.getStartState())
+    #print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
+    #print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     "*** YOUR CODE HERE ***"
     frontier = util.Stack()
     visited = []
     start = problem.getStartState()
     start2 = (start, [])
-    
     frontier.push(start2)
     while not frontier.isEmpty():
         state, path = frontier.pop()
         if state not in visited:
             visited.append(state)
+
             if problem.isGoalState(state):
                 return path
-            else:
+            else:  
                 for succesorState, succesorPath, _ in problem.getSuccessors(state):
                     action = path + [succesorPath]
                     node = (succesorState, action)
                     frontier.push(node)
-
     return path
     #util.raiseNotDefined()
 
@@ -118,7 +117,6 @@ def breadthFirstSearch(problem: SearchProblem):
     frontier.push(start2)
     while not frontier.isEmpty():
         state, path = frontier.pop()
-    
         if state not in visited:
             visited.append(state)
 
