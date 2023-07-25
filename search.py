@@ -92,7 +92,6 @@ def depthFirstSearch(problem: SearchProblem):
     start2 = (start, [])
     
     frontier.push(start2)
-
     while not frontier.isEmpty():
         state, path = frontier.pop()
         if state not in visited:
